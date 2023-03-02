@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.mycryptoapp.domain.model.Coin
 
@@ -58,7 +59,11 @@ fun CoinListTile(
         Text(text = "#" + coin.rank + " " + coin.name)
 
         
-        Text(text = coin.symbol)
+        Text(
+            text = coin.symbol ,
+            color =  if (coin.name.contains('A' , true) )
+                Color.Red else Color.Green,
+        )
 
 
 
